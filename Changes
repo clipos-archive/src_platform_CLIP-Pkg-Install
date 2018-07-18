@@ -1,0 +1,63 @@
+Revision history for Perl extension CLIP::Pkg::Install.
+
+1.1.15 Fri Dec 19 2012
+	- update clippkg_check_removed() regexp for dpkg 1.16.9.
+
+1.1.14 Fri Aug 10 2012
+	- fix typo in do_check_upgrade().
+
+1.1.13 Thu Aug 09 2012
+	- clippkg_check_upgrade(): retry upgrade check without optional packages if the
+	full upgrade check fails - just like clippkg_upgrade() does since 1.1.11.
+
+1.1.12 Tue Aug 07 2012
+	- call apt-get purge instead of apt-get remove in clippkg_remove_optionals()
+	- fix write_unremoved() return code
+
+1.1.11 Wed Jun 20 2012
+	- clippkg_upgrade(): retry upgrade without optional packages if the
+	full upgrade fails.
+
+1.1.7  Wed Feb 10 2010
+	- Add check for masked confs (due to ConfDepends) which are re-pulled
+	  by optional packages.
+
+1.1.6  Mon Jan 11 2010
+	- Call clippkg_check_pkg_msg() when checking packages.
+
+1.1.5  Fri Jul 17 2009
+	- Make use of the new CLIP-Pkg-Base-1.1.8 dpkg error recovery features.
+
+1.1.4  Tue May 12 2009
+	- support configuration dependencies (ConfDepends:)
+	- fix bug in configuration checks where a single configuration's signature 
+	  would not be checked.
+	- fix package removal from cache when a configuration failed its signature 
+	  check.
+
+1.1.3  Mon May 04 2009
+	- fix management of empty optional package files list.
+
+1.1.2  Wed Mar 11 2009
+	- support latest changes in CLIP::Pkg::Base (1.13)
+	  regarding optional files management (working on lists
+	  of optional files, rather than just one).
+
+1.1.1  Wed Jan 21 2009
+	- fix auto-removal of wrong priority packages, 
+	  add test against this in sanity check. 
+
+1.1.0  Tue Jan 20 2009
+	- add support for optional packages installation
+	- add support for removing unneeded packages 
+	  (installed as dependencies of earlier configurations)
+	- optimized selection of relevant configs in an install
+	  run by querying the apt cache
+
+1.0.0  Thu Oct 23 2008
+	- first stable and documented version
+
+0.0.1  Tue Aug 19 20:11:54 2008
+	- original version; created by h2xs 1.23 with options
+		-AXc -n CLIP::Pkg::Install
+

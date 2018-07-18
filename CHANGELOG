@@ -1,0 +1,178 @@
+# CLIP ChangeLog for dev-perl/CLIP-Pkg-Install
+
+*CLIP-Pkg-Install-1.1.15-r1 (20 Dec 2013)
+
+  20 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.15-r1.ebuild, -CLIP-Pkg-Install-1.1.15.ebuild:
+  Force rebuild.
+
+*CLIP-Pkg-Install-1.1.15 (19 Dec 2012)
+
+  19 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.15.ebuild, -CLIP-Pkg-Install-1.1.14.ebuild:
+  Fix clippkg_check_removed() for dpkg-1.16.9.
+
+*CLIP-Pkg-Install-1.1.14 (10 Aug 2012)
+
+  10 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.14.ebuild, -CLIP-Pkg-Install-1.1.13.ebuild:
+  Fix typo in previous update.
+
+*CLIP-Pkg-Install-1.1.13 (09 Aug 2012)
+
+  09 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.13.ebuild, -CLIP-Pkg-Install-1.1.12.ebuild:
+  Add the same fallback in clippkg_check_upgrade() as we did in 
+  clippkg_upgrade() in 1.1.11 - try without optional packages if the
+  check failed with them. This is actually needed in cases where a 
+  selected optional package conflicts with the newer configurations.
+
+*CLIP-Pkg-Install-1.1.12 (07 Aug 2012)
+
+  07 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.12.ebuild, -CLIP-Pkg-Install-1.1.11.ebuild:
+  Fix clippkg_remove_optional() - purge conffiles if any.
+  Fix write_unremoved() return code.
+
+*CLIP-Pkg-Install-1.1.11 (20 Jun 2012)
+
+  20 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.11.ebuild, -CLIP-Pkg-Install-1.1.10-r1.ebuild:
+  Add a fallback in clippkg_upgrade() - if full upgrade fails, we make
+  a second try upgrading only the configurations (i.e. not the optional
+  packages). This might come in handy if e.g. there is not enough free
+  space on disk to perform the full upgrade (configurations + optional
+  packages), or if optional packages create an unsolvable dependency 
+  constraint.
+
+*CLIP-Pkg-Install-1.1.10-r1 (22 Mar 2012)
+
+  22 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.10-r1.ebuild, -CLIP-Pkg-Install-1.1.10.ebuild:
+  Force rebuild.
+
+*CLIP-Pkg-Install-1.1.10 (19 Sep 2011)
+
+  19 Sep 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.10.ebuild, -CLIP-Pkg-Install-1.1.9.ebuild:
+  Add jail to get_confname call.
+
+*CLIP-Pkg-Install-1.1.9 (14 Sep 2011)
+
+  14 Sep 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.9.ebuild, -CLIP-Pkg-Install-1.1.8.ebuild:
+  Check if optional packages moved to the apps dependencies.
+
+*CLIP-Pkg-Install-1.1.8 (21 Jun 2011)
+
+  21 Jun 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.8.ebuild, -CLIP-Pkg-Install-1.1.7-r1.ebuild:
+  Refactoring the detection of configuration packages.
+
+*CLIP-Pkg-Install-1.1.7-r1 (16 May 2011)
+
+  16 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.7-r1.ebuild, -CLIP-Pkg-Install-1.1.7.ebuild:
+  Rbump to force rebuild.
+
+*CLIP-Pkg-Install-1.1.7 (10 Feb 2010)
+
+  10 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.7.ebuild, -CLIP-Pkg-Install-1.1.6.ebuild:
+  Add check for optional packages pulling confs and bypassing 
+  ConfDepends checks.
+
+*CLIP-Pkg-Install-1.1.6 (11 Jan 2010)
+
+  11 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.6.ebuild, -CLIP-Pkg-Install-1.1.5.ebuild:
+  Display [num/total] when checking packages.
+
+*CLIP-Pkg-Install-1.1.5 (17 Jul 2009)
+
+  17 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.5.ebuild, -CLIP-Pkg-Install-1.1.4.ebuild:
+  Port to CLIP-Pkg-Base-1.1.8, make use of new dpkg error recovery
+  features.
+
+*CLIP-Pkg-Install-1.1.4 (12 May 2009)
+
+  12 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.4.ebuild, -CLIP-Pkg-Install-1.1.3.ebuild:
+  Support configuration dependencies.
+  Fix configuration signature check and removal of packages from
+  the installation cache when those checks fail.
+
+*CLIP-Pkg-Install-1.1.3 (04 May 2009)
+
+  04 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.3.ebuild, -CLIP-Pkg-Install-1.1.2.ebuild:
+  Fix empty optional files list.
+
+*CLIP-Pkg-Install-1.1.2 (11 Mar 2009)
+
+  11 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.2.ebuild, -CLIP-Pkg-Install-1.1.1.ebuild:
+  Support CLIP-Pkg-Base-1.1.3.
+
+*CLIP-Pkg-Install-1.1.1 (21 Jan 2009)
+
+  21 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.1.ebuild, -CLIP-Pkg-Install-1.1.0.ebuild:
+  Fix auto-removal of wrong priority packages.
+
+*CLIP-Pkg-Install-1.1.0 (20 Jan 2009)
+
+  20 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.1.0.ebuild, -CLIP-Pkg-Install-1.0.ebuild:
+  Support for optional packages and auto-removal of unneeded packages.
+
+*CLIP-Pkg-Install-1.0 (23 Oct 2008)
+
+  23 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-1.0.ebuild, -CLIP-Pkg-Install-0.6.ebuild:
+  First stable and documented version.
+
+*CLIP-Pkg-Install-0.6 (17 Oct 2008)
+
+  17 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-0.6.ebuild, -CLIP-Pkg-Install-0.5.ebuild:
+  New argument $check for check_upgrade(): support checking
+  for upgrades availability with or without package checks 
+  (in the later case, only the top config's signature is checked,
+  then the presence of its depencies in the local mirror is checked,
+  but not their signature nor flags).
+
+*CLIP-Pkg-Install-0.5 (17 Oct 2008)
+
+  17 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-0.5.ebuild, -CLIP-Pkg-Install-0.4.ebuild:
+  Check signatures on rollback packages installed from the cache
+  when recovering from an install error.
+
+*CLIP-Pkg-Install-0.4 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-0.4.ebuild, -CLIP-Pkg-Install-0.3.ebuild:
+  Smallishes fixes to logs.
+
+*CLIP-Pkg-Install-0.3 (25 Aug 2008)
+
+  25 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-0.3.ebuild, -CLIP-Pkg-Install-0.2.ebuild:
+  Export functions needed by clip core update.
+  Avoid redundant signature checks on config .debs.
+
+*CLIP-Pkg-Install-0.2 (21 Aug 2008)
+
+  21 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +CLIP-Pkg-Install-0.2.ebuild, -CLIP-Pkg-Install-0.1.ebuild:
+  Add cache pruning. 
+  Switch to CLIP::Logger for output.
+
+*CLIP-Pkg-Install-0.1 (20 Aug 2008)
+
+  20 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  CLIP-Pkg-Install-0.1.ebuild:
+  Initial import. Preliminary version of package install
+  functions in perl.

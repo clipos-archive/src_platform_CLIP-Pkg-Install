@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/CLIP-Pkg-Install.t
+lib/CLIP/Pkg/Install.pm
